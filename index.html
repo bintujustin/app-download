@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script>
-if (/android/i.test(navigator.userAgent))
-location.replace("https://play.google.com/store/apps/details?id=bi.itekaride.app");
-else if (/iPhone|iPad|iPod/i.test(navigator.userAgent))
-location.replace("https://apps.apple.com/ke/app/iteka-ride/id6776853912");
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to App Store...</title>
+    <script>
+        (function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // 1. Paste your exact store links here:
+            var playStoreUrl = "https://play.google.com/store/apps/details?id=YOUR_ANDROID_PACKAGE_NAME";
+            var appStoreUrl = "https://apps.apple.com/app/idYOUR_APPLE_APP_ID";
+            var desktopFallback = "https://bintujustin.github.io/itekaride-download/desktop.html"; // Optional fallback for PCs
+
+            // 2. The script instantly routes based on device OS
+            if (/android/i.test(userAgent)) {
+                window.location.replace(playStoreUrl);
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.replace(appStoreUrl);
+            } else {
+                // If scanned by a laptop/PC camera, it keeps them on your web landing page
+                window.location.replace(desktopFallback);
+            }
+        })();
+    </script>
 </head>
-<body></body>
+<body style="background: #ffffff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <div style="text-align: center;">
+        <p style="font-size: 18px; color: #333333; font-weight: 500;">Opening App Store...</p>
+    </div>
+</body>
 </html>

@@ -1,43 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Download ITEKA Ride</title>
-
 <script>
-window.onload = function() {
-    const ua = navigator.userAgent;
-
-    if (/android/i.test(ua)) {
-        window.location.replace(
-            "https://play.google.com/store/apps/details?id=bi.itekaride.app"
-        );
-    }
-    else if (/iPhone|iPad|iPod/i.test(ua)) {
-        window.location.replace(
-            "https://apps.apple.com/ke/app/iteka-ride/id6776853912"
-        );
-    }
-};
+if (/android/i.test(navigator.userAgent))
+location.replace("https://play.google.com/store/apps/details?id=bi.itekaride.app");
+else if (/iPhone|iPad|iPod/i.test(navigator.userAgent))
+location.replace("https://apps.apple.com/ke/app/iteka-ride/id6776853912");
 </script>
 </head>
-
-<body>
-<h2>Download ITEKA Ride</h2>
-
-<p>
-<a href="https://play.google.com/store/apps/details?id=bi.itekaride.app">
-Android Download
-</a>
-</p>
-
-<p>
-<a href="https://apps.apple.com/ke/app/iteka-ride/id6776853912">
-iPhone Download
-</a>
-</p>
-
-</body>
+<body></body>
 </html>
